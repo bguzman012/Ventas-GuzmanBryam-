@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list>
+    <ion-list-header>
+      Lista de Productos
+    </ion-list-header>
+
+
+    <ion-item-sliding *ngFor="let carrito of carritos | async">
+      <ion-item >
+        <ion-label (click)="tomarProductoById(producto.id)">
+          <h2>{{carrito.id_producto.nombre}}</h2>
+          <h3>{{carrito.id_producto.precio}}</h3>
+        </ion-label>
+        <ion-avatar slot="start">
+          <img src="{{carrito.id_producto.imagen}}">
+        </ion-avatar>
+        
+      </ion-item>
+     
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-button class="ion-margin-top" shape="round" color="primary" (click)="vaciar()" size="small" type="submit">Vaciar
+  </ion-button>
+
+  
+
+  
+</ion-content>

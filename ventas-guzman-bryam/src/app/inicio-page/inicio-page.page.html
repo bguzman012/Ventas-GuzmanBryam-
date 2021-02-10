@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>inicio-page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list>
+    <ion-list-header>
+      Lista de Productos
+    </ion-list-header>
+
+
+    <ion-item-sliding *ngFor="let producto of productos | async">
+      <ion-item >
+        <ion-label (click)="tomarProductoById(producto.id)">
+          <h2>{{producto.nombre}}</h2>
+          <h3>{{producto.precio}}</h3>
+        </ion-label>
+        <ion-avatar slot="start">
+          <img src="{{producto.imagen}}">
+        </ion-avatar>
+        
+      </ion-item>
+     
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-button class="ion-margin-top" shape="round" color="primary" (click)="redirigirCarrito()" size="small" type="submit">Mirar Carrito
+  </ion-button>
+
+  
+</ion-content>

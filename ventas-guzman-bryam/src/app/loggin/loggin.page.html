@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color = "primary">
+    <ion-title class="ion-text-center">Iniciar sesión</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+ 
+  <form autocomplete="off" (submit)="doLogin()">
+    <ion-item>
+      <ion-label position="stacked" > Correo <span class="text-danger">*</span></ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.correo" name="email" required="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" > Contraseña <span class="text-danger">*</span></ion-label>
+      <ion-input [(ngModel)]="usuario.password" type="password" name="password" required="true"></ion-input>
+    </ion-item>
+    <ion-button class="ion-margin-top" type="submit" expand="block">Iniciar Sesion</ion-button>
+    <ion-button class="ion-margin-top" shape="round" color="danger" routerLink="/registro" type="submit"
+              size="small">Cancelar</ion-button>
+  </form>
+  
+
+
+</ion-content>

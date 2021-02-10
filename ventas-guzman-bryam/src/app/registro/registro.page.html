@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Registro</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <img class="icon" src="assets/icon/graphic2.svg" alt="">
+  <form autocomplete="off" (submit)="doLogin()">
+    <ion-item>
+      <ion-label position="stacked"> Nombre <span class="text-danger">*</span></ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.nombre" name="email" required="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"> Apellidos<span class="text-danger">*</span></ion-label>
+      <ion-input [(ngModel)]="usuario.apellidos" type="text" name="password" required="true">
+      </ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked"> Correo <span class="text-danger">*</span></ion-label>
+      <ion-input [(ngModel)]="usuario.correo" type="text" name="password" required="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"> Contraseña <span class="text-danger">*</span></ion-label>
+      <ion-input [(ngModel)]="usuario.password" type="password" name="password" required="true"></ion-input>
+    </ion-item>
+    <ion-button class="ion-margin-top" type="submit" expand="block">Registrarse</ion-button>
+    <ion-button class="ion-margin-top" expand="block" routerLink="/loggin" type="submit"
+             >Loggin</ion-button>
+
+  </form>
+
+</ion-content>
